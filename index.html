@@ -142,10 +142,27 @@ button{
  
 <script>
 function joinRoom(room){
-  alert("Joining " + room + "...");
+  document.body.innerHTML = `
+    <div style="min-height:100vh;background:#090b16;color:white;padding:25px;font-family:Arial;text-align:center">
+      <h1>🎤 ${room}</h1>
+      <p style="color:#00ff88">● Room Live</p>
+
+      <div style="margin:30px auto;padding:25px;background:#171a2b;border-radius:20px;max-width:500px">
+        <h2>🎙️ Live Voice Room</h2>
+        <p>Welcome to ${room}</p>
+        <button onclick="alert('Microphone feature will be connected next')"
+          style="padding:15px 30px;border:0;border-radius:30px;background:#477cff;color:white;font-size:16px">
+          🎤 Join Mic
+        </button>
+      </div>
+
+      <button onclick="location.reload()"
+        style="padding:12px 25px;border:0;border-radius:25px;background:#333;color:white">
+        ← Back to Rooms
+      </button>
+    </div>
+  `;
 }
-</script>
-<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-analytics.js";
